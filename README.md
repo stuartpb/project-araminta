@@ -1,1 +1,58 @@
 # tubman20-stamp
+
+This is a project to create a stamp of Harriet Tubman that can effectively overlay Andrew Jackson's portrait on the US $20 bill, inspired by a design seen in photographs from an [Adafruit article][] on the subject, attached to a tutorial on making portrait stamps in general.
+
+[Adafruit article]: https://blog.adafruit.com/2017/10/12/turn-your-20s-into-tubmans-with-this-diy-3-d-printed-stamp-wired-adafruit-ustreasury-stevenmnuchin1/
+
+Adafruit's posted tutorial contains the source files for *a* stamp of Harriet Tubman. The [stamp depicted in their blog post][fancy stamp] announcing their tutorial (and echoed in [WIRED][]), however, is not the same as the one whose files are provided in the tutorial (as you can see from [the stamped specimen][], it features a full bust of Tubman covering up Jackson's portrait with "TUBMAN" lettering to overwrite the "JACKSON" beneath the portrait, along with the outline of the stamp being an alignment guide for overlaying Jackson's silhouette).
+
+[fancy stamp]: https://cdn-blog.adafruit.com/uploads/2017/10/IMG_5904-1.jpg
+[WIRED]: https://www.wired.com/story/stamp-puts-harriet-tubmans-face-on-a-20-dollar-bill/
+[the stamped specimen]: https://media.wired.com/photos/59de7f83f3a29d1c2899b7f9/master/w_limit,c_limit/tubman-IL.jpg
+
+My motto is, "if the source isn't available, remake it better", so that's the aim of this project: to recreate this design in a fully [SACRED][] manner, suitable for reproducing, remaking, and remixing.
+
+[SACRED]: https://github.com/stuartpb/sacred-tenets
+
+## Artifacts
+
+This project uses a few non-procedural assets to assemble the finished product:
+
+### The Tubman portrait
+
+The portrait of Harriet Tubman on the stamp comes from [a recently-discovered photograph of Tubman][Smithsonian] in her youth. Finding a high-resolution image file of this photograph is not as simple as it should be: there is [an instance of the Associated Press scan of the portrait on Wikimedia Commons][Wikimedia Commons], but it's grossly overscaled from the image's original resolution (2100x3300, according to [the image's Exif data][metadata]), probably to compensate for having been downscaled from wherever it was originally obtained (even when rescaled to the original resolution, many details are blurry): the source for the height map included here was a 1200x1922 copy of the photo From Pinterest that was probably copied from [a rescaled instance of the photo on Wikipedia][1200px] in the first place.
+
+[Smithsonian]: https://www.smithsonianmag.com/smart-news/smithsonian-library-of-congress-rare-1860s-photo-harriet-tubman-180962818/
+[Wikimedia Commons]: https://commons.wikimedia.org/wiki/File:Harriet_Tubman_c1868-69.jpg
+[metadata]: https://commons.wikimedia.org/wiki/File:Harriet_Tubman_c1868-69.jpg#Metadata
+[1200px]: https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Harriet_Tubman_c1868-69.jpg/1200px-Harriet_Tubman_c1868-69.jpg
+
+This 1200px-wide portrait was opened in GIMP, Desaturated by Luminosity, Leveled with stops of 87, 0.10, and 142, and Cropped, from the upper-left-hand corner of 457x332, to 260x300.
+
+My first draft for the stamp used this posterization as a heightmap, thinking that the subtle gradients would help even the stamp's texture. Looking at [the header image from the WIRED article at its original resolution][Tubman-TA] (which looks like it's probably the portrait used for Adafruit's unpublished stamp), it appears to have been an auto-traced vectorized version of the raster portrait: I'll probably be using a similar approach for future iterations of the design myself (as finding an appropriate resolution to scale the raster to has been less smooth than measuring it directly in millimeter units would be).
+
+[Tubman-TA]: https://media.wired.com/photos/59de7ed7d49fc63a79d73baf/master/w_limit,c_limit/Tubman-TA.jpg
+
+### The "TUBMAN" Copperplate
+
+`tubman-copperplate.svg` is a wordmark to replace the "JACKSON" banner at the bottom of the portrait: as there's no open-licensed digitization of [Copperplate Gothic][] that I could find, I've just included the paths of the glyphs here. (If you wish to make your own variation of this, some manner of Copperplate Gothic for "personal use" shouldn't be too hard to find: I think Microsoft includes copies of it in redistributables like the viewers for Office files, or PowerPoint presentations, or their "web font" bundle.)
+
+[Copperplate Gothic]: https://en.wikipedia.org/wiki/Copperplate_Gothic
+
+### The Jackson silhouette
+
+The Jackson silhouette included here was obtained by doing a union on the paths of a portrait of Jackson from some clipart obtained via some shady rehosting site that I'm not going to link to here (which was then run through an online EPS-to-SVG converter, since I couldn't easily get anything on my machine to convert it neatly), claiming that the image was public domain. I just as easily could have traced this myself (and, as it's based on a work of the US government, should be a fair-use derivative anyway); this mostly just saved me the fretting that I would otherwise be prone to over things like how much detail to put into each individual hair of the silhouette.
+
+## Models
+
+The `tubman20-stamp.scad` file currently present in the repository has been mostly designed just for proof-of-concept testing the TPU-printing approach to stamp design and iteration. Of the artifacts described above, it only incorporates the Tubman portrait, and is not yet suitable for production usage (it's still not even scaled correctly, as it's based on a distance-between-eyes measurement ratio that doesn't give good results when stamping).
+
+## Testing and Iterating
+
+Rather than printing molds, as described in the Adafruit tutorial, I'm printing the prototype stamps directly in TPU. For stamping, I'm then affixing them to a cork with double-stick tape.
+
+Since I don't have an endless supply of $20 bills (and washable ink neither adsorbs well onto TPU, nor washes easily off of money), I'm testing the stamp by printing the portrait from [this scan of a $20 bill obverse on Wikimedia Commons][Series 2006 Obverse] on my [Brother QL-700][] label printer (the only "paper" printer I have) on cheap DK-2205 knockoff label paper (one of the nice things about Brother label printers is that, for the more common paper types, there are *lots* of generics available), laid out in the [P-touch Editor][] software rotated 90 degrees at a size of 2.61 inches tall/wide and -0.08 inches horizontally, and with a brightness of 25% and a contrast of 100%. (I've cropped the bill to just the portrait using the software's "Trimming" feature; the extents that I cropped it to weren't particularly careful, just any points along the bill that are wide enough to include the stamped area of Jackson's portrait without wasting paper.)
+
+[Series 2006 Obverse]: https://commons.wikimedia.org/wiki/File:US_$20_Series_2006_Obverse.jpg
+[Brother QL-700]: http://m.brother-usa.com/labelprinter/modeldetail/23/ql700/overview
+[P-touch Editor]: http://support.brother.com/g/b/downloadtop.aspx?c=us&lang=en&prod=lpql700eus
