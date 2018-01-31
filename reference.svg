@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="55.935497mm"
+   height="58.745392mm"
+   viewBox="0 0 55.935497 58.745392"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.1 r15371"
+   sodipodi:docname="reference.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.56"
+     inkscape:cx="63.059139"
+     inkscape:cy="82.349853"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1680"
+     inkscape:window-height="987"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:snap-page="true" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="bill-specimen"
+     sodipodi:insensitive="true"
+     style="display:none">
+    <image
+       y="-4.0290947"
+       x="-36.228706"
+       id="image4503"
+       xlink:href="https://upload.wikimedia.org/wikipedia/commons/7/79/US_%2420_Series_2006_Obverse.jpg"
+       style="image-rendering:optimizeQuality"
+       preserveAspectRatio="none"
+       height="66.293999"
+       width="155.2653" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="tubman-specimen"
+     style="display:none;opacity:1"
+     sodipodi:insensitive="true">
+    <image
+       y="-51.93391"
+       x="-129.99084"
+       id="image6286"
+       xlink:href="https://upload.wikimedia.org/wikipedia/commons/f/fc/Harriet_Tubman_c1868-69.jpg"
+       style="image-rendering:optimizeQuality"
+       preserveAspectRatio="none"
+       height="357.72693"
+       width="223.29503"
+       transform="matrix(-0.99409167,0.10854381,0.10854381,0.99409167,0,0)" />
+  </g>
+  <g
+     inkscape:label="jackson-silhouette"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:inline;opacity:1">
+    <image
+       xlink:href="jackson-silhouette.svg"
+       id="image9"
+       preserveAspectRatio="none"
+       style="image-rendering:optimizeQuality"
+       x="0"
+       y="0"
+       width="100%"
+       height="100%" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="tubman-silhouette"
+     style="display:none;opacity:1">
+    <image
+       xlink:href="tubman-silhouette.svg"
+       id="image12"
+       preserveAspectRatio="none"
+       style="image-rendering:optimizeQuality"
+       x="0"
+       y="0"
+       width="100%"
+       height="100%" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="tubman-portrait"
+     style="display:none;opacity:1">
+    <image
+       xlink:href="tubman-portrait.svg"
+       id="image12"
+       preserveAspectRatio="none"
+       style="image-rendering:optimizeQuality"
+       x="0"
+       y="0"
+       width="100%"
+       height="100%" />
+  </g>
+</svg>

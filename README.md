@@ -20,18 +20,13 @@ This project uses a few non-procedural assets to assemble the finished product:
 
 ### The Tubman portrait
 
-The portrait of Harriet Tubman on the stamp comes from [a recently-discovered photograph of Tubman][Smithsonian] in her youth. Finding a high-resolution image file of this photograph is not as simple as it should be: there is [an instance of the Associated Press scan of the portrait on Wikimedia Commons][Wikimedia Commons], but it's grossly overscaled from the image's original resolution (2100x3300, according to [the image's Exif data][metadata]), probably to compensate for having been downscaled from wherever it was originally obtained (even when rescaled to the original resolution, many details are blurry): the source for the height map included here was a 1200x1922 copy of the photo From Pinterest that was probably copied from [a rescaled instance of the photo on Wikipedia][1200px] in the first place.
+The portrait of Harriet Tubman on the stamp comes from [a recently-discovered photograph of Tubman][Smithsonian] in her youth. Finding a high-resolution image file of this photograph is not as simple as it should be: there is [an instance of the Associated Press scan of the portrait on Wikimedia Commons][Wikimedia Commons], but it's grossly overscaled from the image's original resolution (2100x3300, according to [the image's Exif data][metadata]), probably to compensate for having been downscaled from wherever it was originally obtained (even when rescaled to the original resolution, many details are blurry).
 
 [Smithsonian]: https://www.smithsonianmag.com/smart-news/smithsonian-library-of-congress-rare-1860s-photo-harriet-tubman-180962818/
 [Wikimedia Commons]: https://commons.wikimedia.org/wiki/File:Harriet_Tubman_c1868-69.jpg
 [metadata]: https://commons.wikimedia.org/wiki/File:Harriet_Tubman_c1868-69.jpg#Metadata
-[1200px]: https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Harriet_Tubman_c1868-69.jpg/1200px-Harriet_Tubman_c1868-69.jpg
 
-This 1200px-wide portrait was opened in GIMP, Desaturated by Luminosity, Leveled with stops of 87, 0.10, and 142, and Cropped, from the upper-left-hand corner of 457x332, to 260x300.
-
-My first draft for the stamp used this posterization as a heightmap, thinking that the subtle gradients would help even the stamp's texture. Looking at [the header image from the WIRED article at its original resolution][Tubman-TA] (which looks like it's probably the portrait used for Adafruit's unpublished stamp), it appears to have been an auto-traced vectorized version of the raster portrait: I'll probably be using a similar approach for future iterations of the design myself (as finding an appropriate resolution to scale the raster to has been less smooth than measuring it directly in millimeter units would be).
-
-[Tubman-TA]: https://media.wired.com/photos/59de7ed7d49fc63a79d73baf/master/w_limit,c_limit/Tubman-TA.jpg
+To make the portrait seen here, I took the overscaled version of the portrait from Wikimedia Commons, opened it in GIMP, Desaturated it by Luminosity, and Thresholded it (with a lower bound of 120). I then converted that image to an SVG via https://tracercore.com/, using an `ltres` of 5, a `qtres` of 10, and a `strokewidth` of 0 (along with the obvious settings that should be set to use a palette of black and white, ie. setting `numberofcolors` to 2). I then imported this to Inkscape, where I transformed it appropriately to fit Jackson's portrait on the 20, relative to the coordinate space established by jackson-silhouette.svg.
 
 ### The "TUBMAN" Copperplate
 
@@ -43,9 +38,17 @@ My first draft for the stamp used this posterization as a heightmap, thinking th
 
 The Jackson silhouette included here was obtained by doing a union on the paths of a portrait of Jackson from some clipart obtained via some shady rehosting site that I'm not going to link to here (which was then run through an online EPS-to-SVG converter, since I couldn't easily get anything on my machine to convert it neatly), claiming that the image was public domain. I just as easily could have traced this myself (and, as it's based on a work of the US government, should be a fair-use derivative anyway); this mostly just saved me the fretting that I would otherwise be prone to over things like how much detail to put into each individual hair of the silhouette.
 
+## DXF Files
+
+As OpenSCAD does not currently support importing SVG vectors, the SVGs in this repository have been rendered out to DXFs, with "Flatten Beziers" applied with a Flatness of 1.0 (0.1 for tubman-copperplate).
+
+There appear to be issues in the current iteration involving the Tubman portrait that result in the final render not having coherent normals: I'm working on seeing if I can fix this.
+
 ## Models
 
-The `tubman20-stamp.scad` file currently present in the repository has been mostly designed just for proof-of-concept testing the TPU-printing approach to stamp design and iteration. Of the artifacts described above, it only incorporates the Tubman portrait, and is not yet suitable for production usage (it's still not even scaled correctly, as it's based on a distance-between-eyes measurement ratio that doesn't give good results when stamping).
+The `tubman20-stamp.scad` file currently present in the repository specifies a printable stamp pad.
+
+Further models, such as a stamp handle and mold, will be generated in later iterations.
 
 ## Testing and Iterating
 
