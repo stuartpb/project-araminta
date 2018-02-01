@@ -38,17 +38,14 @@ To make the portrait seen here, I took the overscaled version of the portrait fr
 
 The Jackson silhouette included here was obtained by doing a union on the paths of a portrait of Jackson from some clipart obtained via some shady rehosting site that I'm not going to link to here (which was then run through an online EPS-to-SVG converter, since I couldn't easily get anything on my machine to convert it neatly), claiming that the image was public domain. I just as easily could have traced this myself (and, as it's based on a work of the US government, should be a fair-use derivative anyway); this mostly just saved me the fretting that I would otherwise be prone to over things like how much detail to put into each individual hair of the silhouette.
 
-## DXF Files
+## Rendering Models
 
-As OpenSCAD does not currently support importing SVG vectors, the SVGs in this repository have been rendered out to DXFs, with "Flatten Beziers" applied with a Flatness of 1.0 (0.1 for tubman-copperplate).
+The `tubman20-stamp.scad` file currently present in the repository specifies a printable stamp pad. (Further models, such as a stamp handle and mold, will be generated in later iterations.)
 
-There appear to be issues in the current iteration involving the Tubman portrait that result in the final render not having coherent normals: I'm working on seeing if I can fix this.
+This design relies upon importing SVGs into OpenSCAD, which is [an experimental feature at time of writing][openscad/openscad#1740]: to use it, you'll need to download [a development snapshot of OpenSCAD][snapshots], then enable SVG import under Edit -> Preferences -> Features (or pass `--enable=svg-import`, for command line usage).
 
-## Models
-
-The `tubman20-stamp.scad` file currently present in the repository specifies a printable stamp pad.
-
-Further models, such as a stamp handle and mold, will be generated in later iterations.
+[openscad/openscad#1740]: https://github.com/openscad/openscad/issues/1740
+[snapshots]: http://www.openscad.org/downloads.html#snapshots
 
 ## Testing and Iterating
 
