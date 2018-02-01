@@ -24,6 +24,9 @@ copperplate_safezone_h = 3.5;
 copperplate_x = 18.5;
 copperplate_y = 0.5;
 
+// Expansion to make the copperplate printable on a 0.4mm nozzle
+copperplate_outset = 0.08;
+
 // Extent values to counteract OpenSCAD's forced bounding-box centering
 tubman_y_offset = -(58.745-51.849)/2;
 copperplate_w = 11.480;
@@ -41,6 +44,6 @@ mirror([1,0,0]) union() {
         cube([twenty_safezone_w,twenty_safezone_h,stamp_depth+fudge]);
     }
     translate([copperplate_w/2+copperplate_x,copperplate_h/2+copperplate_y,0]) from_jackson_bottom_left()
-      linear_extrude(1) import("tubman-copperplate.svg");
+      linear_extrude(1) offset(delta=copperplate_outset) import("tubman-copperplate.svg");
   }
 }
