@@ -42,7 +42,7 @@ The Jackson silhouette included here was obtained by doing a union on the paths 
 
 As OpenSCAD does not currently support importing SVG vectors, the SVGs in this repository have been rendered out to DXFs, with "Flatten Beziers" applied with a Flatness of 1.0 (0.1 for tubman-copperplate).
 
-There appear to be issues in the current iteration involving the Tubman portrait that result in the final render not having coherent normals: I'm working on seeing if I can fix this.
+There appear to be issues in the current iteration involving the Tubman portrait that result in the final render not having coherent normals: as a workaround, this iteration attempts to use a rendered bitmap of the portrait instead. (This bitmap appears to be too large for OpenSCAD to display, which is why this isn't getting committed to the `master` branch.)
 
 ## Models
 
