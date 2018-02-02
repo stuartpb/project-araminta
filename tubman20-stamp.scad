@@ -32,18 +32,22 @@ tubman_y_offset = -(58.745-51.849)/2;
 copperplate_w = 11.480;
 copperplate_h = 1.482;
 
+module stamp_design() {
+  union() {
+    difference() {
+      translate([0, tubman_y_offset]) import("tubman-portrait.svg");
+      translate([copperplate_safezone_x,-1,0]) from_jackson_bottom_left()
+        square([copperplate_safezone_w,copperplate_safezone_h]);
+      translate([twenty_safezone_x,0,0]) from_jackson_bottom_left()
+        square([twenty_safezone_w,twenty_safezone_h]);
+    }
+    translate([copperplate_w/2+copperplate_x,copperplate_h/2+copperplate_y,0]) from_jackson_bottom_left()
+      offset(delta=copperplate_outset) import("tubman-copperplate.svg");
+  }
+}
+
 mirror([1,0,0]) union() {
   linear_extrude(backing_depth) import("jackson-silhouette.svg");
   linear_extrude(backing_depth) translate([0, tubman_y_offset]) import("tubman-silhouette.svg");
-  translate([0,0, backing_depth]) union() {
-    difference() {
-      linear_extrude(stamp_depth) translate([0, tubman_y_offset]) import("tubman-portrait.svg");
-      translate([copperplate_safezone_x,-1,0]) from_jackson_bottom_left()
-        cube([copperplate_safezone_w,copperplate_safezone_h,stamp_depth+fudge]);
-      translate([twenty_safezone_x,0,0]) from_jackson_bottom_left()
-        cube([twenty_safezone_w,twenty_safezone_h,stamp_depth+fudge]);
-    }
-    translate([copperplate_w/2+copperplate_x,copperplate_h/2+copperplate_y,0]) from_jackson_bottom_left()
-      linear_extrude(1) offset(delta=copperplate_outset) import("tubman-copperplate.svg");
-  }
+  translate([0,0, backing_depth]) linear_extrude(stamp_depth) stamp_design();
 }
