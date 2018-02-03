@@ -1,4 +1,4 @@
-# tubman20-stamp
+# Project Araminta
 
 This is a project to create a stamp of Harriet Tubman that can effectively overlay Andrew Jackson's portrait on the US $20 bill, inspired by a design seen in photographs from an [Adafruit article][] on the subject, attached to a tutorial on making portrait stamps in general.
 
@@ -13,6 +13,18 @@ Adafruit's posted tutorial contains the source files for *a* stamp of Harriet Tu
 My motto is, "if the source isn't available, remake it better", so that's the aim of this project: to recreate this design in a fully [SACRED][] manner, suitable for reproducing, remaking, and remixing.
 
 [SACRED]: https://github.com/stuartpb/sacred-tenets
+
+## Name
+
+The name "Project Araminta" comes from [Tubman's birth name, Araminta "Minty" Ross][Wikipedia]. It also sounds like "our Mint", which gestures toward one of the goals of this project: to, as the US mint drags its heels on enacting its plans, take matters into the people's hands.
+
+[Wikipedia]: https://en.wikipedia.org/wiki/Harriet_Tubman#Birth_and_family
+
+## Legality
+
+**Stamping your money with Harriet Tubman's face is perfectly legal.** [Adafruit's writeup on the subject][Adafruit legality article]  goes into exhaustive detail, indentifying all relevant statutes and precedents.
+
+[Adafruit legality article]: https://blog.adafruit.com/2017/10/15/hey-steven-mnuchin-making-harriet-tubman-20s-seems-totally-ok-ustreasury-stevenmnuchin1/
 
 ## Artifacts
 
